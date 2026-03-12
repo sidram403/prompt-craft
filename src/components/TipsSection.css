@@ -1,0 +1,83 @@
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    display: flex;
+    gap: 16px;
+    padding: 22px;
+    border-top: 2px solid var(--tip-color, var(--accent-primary));
+    cursor: default;
+}
+
+.tip-icon-wrap {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--tip-color) 15%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    border: 1px solid color-mix(in srgb, var(--tip-color) 30%, transparent);
+}
+
+.tip-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tip-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.tip-desc {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.tip-example {
+    margin-top: 4px;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    border-left: 2px solid var(--tip-color, var(--accent-primary));
+}
+
+.tip-example-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tip-example code {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}

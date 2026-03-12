@@ -1,0 +1,487 @@
+.gen-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.gen-bg-orb {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 60%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Layout */
+.gen-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* Form Card */
+.gen-form {
+    position: sticky;
+    top: 88px;
+}
+
+.gen-form-inner {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Steps */
+.gen-step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gen-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.gen-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.gen-label-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Task Type Grid */
+.task-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.task-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.task-type-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--task-color);
+    transform: translateY(-2px);
+}
+
+.task-type-btn.active {
+    background: color-mix(in srgb, var(--task-color) 15%, transparent);
+    border-color: var(--task-color);
+}
+
+.task-icon {
+    font-size: 1.2rem;
+}
+
+.task-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.task-type-btn.active .task-label {
+    color: var(--text-primary);
+}
+
+/* ──────────────────────────────────────────
+   SELECT FIX: dark background + light text
+   ────────────────────────────────────────── */
+.gen-select {
+    width: 100%;
+    padding: 10px 14px;
+    background: #1a2033;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: #f1f5f9;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2364748b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    color-scheme: dark;
+}
+
+.gen-select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.gen-select option {
+    background-color: #1a2033;
+    color: #f1f5f9;
+    padding: 8px;
+}
+
+/* Textareas */
+.gen-textarea,
+.gen-textarea-sm,
+.gen-textarea-code {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.gen-textarea-code {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+}
+
+.gen-textarea:focus,
+.gen-textarea-sm:focus,
+.gen-textarea-code:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    background: rgba(99, 102, 241, 0.04);
+}
+
+.gen-textarea::placeholder,
+.gen-textarea-sm::placeholder,
+.gen-textarea-code::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Advanced Toggle */
+.gen-advanced-toggle {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.83rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: left;
+    padding: 4px 0;
+}
+
+.gen-advanced-toggle:hover {
+    color: var(--accent-primary);
+}
+
+.gen-advanced {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 8px;
+}
+
+/* Checkboxes */
+.gen-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gen-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.gen-checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-primary);
+    cursor: pointer;
+}
+
+/* Generate Button */
+.gen-generate-btn {
+    width: 100%;
+    padding: 14px !important;
+    font-size: 1rem !important;
+    justify-content: center;
+}
+
+.gen-generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.gen-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+/* ── Output Panel ── */
+.gen-output-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gen-output-empty {
+    padding: 40px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.gen-empty-icon {
+    font-size: 3rem;
+}
+
+.gen-output-empty h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.gen-output-empty p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 360px;
+}
+
+.gen-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    text-align: left;
+    padding-top: 8px;
+}
+
+.gen-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+.gen-feature-item span {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.gen-feature-item strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+}
+
+.gen-feature-item small {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+/* Loading */
+.gen-loading {
+    padding: 60px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.gen-loading-bars {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    height: 40px;
+}
+
+.gen-loading-bar {
+    width: 6px;
+    border-radius: 4px;
+    background: var(--gradient-primary);
+    animation: loadingBar 1s ease infinite alternate;
+}
+
+@keyframes loadingBar {
+    from {
+        height: 12px;
+        opacity: 0.4;
+    }
+
+    to {
+        height: 40px;
+        opacity: 1;
+    }
+}
+
+/* Output */
+.gen-output {
+    overflow: hidden;
+}
+
+.gen-output-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gen-output-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.gen-output-badge {
+    padding: 4px 12px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a5b4fc;
+}
+
+.gen-char-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.gen-output-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.gen-clear-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gen-clear-btn:hover {
+    border-color: var(--border-hover);
+    color: var(--text-secondary);
+}
+
+.gen-copy-btn {
+    padding: 7px 18px !important;
+    font-size: 0.88rem !important;
+}
+
+.gen-copy-btn.copied {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+.gen-quality-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.gen-output-text {
+    margin: 20px;
+    max-height: 480px;
+    overflow-y: auto;
+    font-size: 0.83rem !important;
+}
+
+.gen-output-cta {
+    padding: 14px 20px;
+    background: rgba(99, 102, 241, 0.05);
+    border-top: 1px solid var(--border);
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.gen-output-cta strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+    .gen-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gen-form {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .task-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gen-form-inner {
+        padding: 20px;
+    }
+}
